@@ -95,8 +95,6 @@ local function isAllMeterNameF()
 end
 
 local function CreateMeter()
-    local randomNumber = math.random(152319653, 9999999999)
-
     for k, value in pairs(meters) do
 
         local meterName = nil
