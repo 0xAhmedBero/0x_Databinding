@@ -28,6 +28,8 @@ local ABILITY_CARDS = {
 }
 
 
+local createdAbilityCard = {}
+
 -- I'm inserting the cards into the table because, if we remove them,
 -- they can't be added again until the game restarts.
 -- Not sure why this happens, but updating the cards is the only way
@@ -56,5 +58,6 @@ RegisterCommand("abilitycards", function()
         DatabindingAddDataString(cardItemContainer, "ability_card_loadout_rank_text", "test")
 
         DatabindingInsertUiItemToListFromContextStringAlias(cardList, -1, "ability_loadout_card_focusable", cardItemContainer)
+        table.insert(createdAbilityCard[i], cardItemContainer)
     end
 end, false)
