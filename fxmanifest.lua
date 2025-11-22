@@ -16,5 +16,8 @@ client_scripts {
     'client/Scores.lua',
     'client/ScoresAndFistingMeter.lua',
     'client/CircleMeter.lua',
+    'client/Crafting.lua',
+    'client/AbilityCards.lua',
+    'client/Test.lua',
 
 }
