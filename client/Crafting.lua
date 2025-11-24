@@ -1,6 +1,17 @@
+-- health, stamina, deadeye, staminaHorse, healthHorse
+-- from -10 to 10 no 0 and 11 for gold
+
+-- healthCore, staminaCore, deadeyeCore, staminaCoreHorse, healthCoreHorse
+-- from -8 to 8 no 0 and 12 for gold
+
+-- CoreDurationCategory
+-- level 1 = "3059683677"   means hash "EFFECT_DURATION_CATEGORY_1"
+-- level 2 = "3969809883"   means hash "EFFECT_DURATION_CATEGORY_2"
+-- level 3 = "585722480"    means hash "EFFECT_DURATION_CATEGORY_3"
+-- level 4 = "3373446852"   means hash "EFFECT_DURATION_CATEGORY_4"
+
 
 local CraftingDatastore = nil
-
 
 local slotsData = {
     {
@@ -82,8 +93,57 @@ RegisterCommand("crafting", function(source, args)
 
         DatabindingAddDataBool(slotContainer, "slotContainer", true)
 
-        local playerInfo = DatabindingAddDataContainer(slotContainer, "itemPreview")
-        DatabindingAddDataBool(playerInfo, "active", true)
+
+
+        -- health, stamina, deadeye, staminaHorse, healthHorse
+        -- from -10 to 10 no 0 and 11 for gold
+
+        -- healthCore, staminaCore, deadeyeCore, staminaCoreHorse, healthCoreHorse
+        -- from -8 to 8 no 0 and 12 for gold
+
+        -- CoreDurationCategory
+        -- level 1 = "3059683677"   means hash "EFFECT_DURATION_CATEGORY_1"
+        -- level 2 = "3969809883"   means hash "EFFECT_DURATION_CATEGORY_2"
+        -- level 3 = "585722480"    means hash "EFFECT_DURATION_CATEGORY_3"
+        -- level 4 = "3373446852"   means hash "EFFECT_DURATION_CATEGORY_4"
+
+
+        -- player
+        DatabindingAddDataInt(slotContainer, "health", 8)
+        DatabindingAddDataInt(slotContainer, "healthDurationCategory", 585722480)
+
+        DatabindingAddDataInt(slotContainer, "stamina", 7)
+        DatabindingAddDataInt(slotContainer, "staminaCoreDurationCategory", 3373446852)
+
+        DatabindingAddDataInt(slotContainer, "deadeye", 7)
+        DatabindingAddDataInt(slotContainer, "deadeyeDurationCategory", 3373446852)
+
+        DatabindingAddDataInt(slotContainer, "healthCore", 7)
+        DatabindingAddDataInt(slotContainer, "healthCoreDurationCategory", 3373446852)
+
+        DatabindingAddDataInt(slotContainer, "staminaCore", 5)
+        DatabindingAddDataInt(slotContainer, "staminaDurationCategory", 3969809883)
+
+        DatabindingAddDataInt(slotContainer, "deadeyeCore", 3)
+        DatabindingAddDataInt(slotContainer, "deadeyeCoreDurationCategory", 3969809883)
+
+
+
+
+
+        -- horse
+        DatabindingAddDataInt(slotContainer, "staminaHorse", 7)
+        DatabindingAddDataInt(slotContainer, "staminaHorseDurationCategory", 3373446852)
+
+        DatabindingAddDataInt(slotContainer, "healthHorse", 5)
+        DatabindingAddDataInt(slotContainer, "staminaDurationCategory", 3969809883)
+
+        DatabindingAddDataInt(slotContainer, "staminaCoreHorse", 3)
+        DatabindingAddDataInt(slotContainer, "staminaCoreHorseDurationCategory", 3059683677)
+
+        DatabindingAddDataInt(slotContainer, "healthCoreHorse", 3)
+        DatabindingAddDataInt(slotContainer, "healthCoreHorseDurationCategory", 3059683677)
+
 
 
 
