@@ -3,6 +3,7 @@
 
 local containerData = nil
 local containerData2 = nil
+local containerData3 = nil
 local menuList = nil
 function OpenLegendaryBountyTextItemMenu()
 
@@ -23,6 +24,12 @@ function OpenLegendaryBountyTextItemMenu()
     DatabindingAddDataString(containerData2, "header_text", "Header Name")
     DatabindingAddDataString(containerData2, "footer_tooltip_text", "tip")
     DatabindingAddDataString(containerData2, "footer_tooltip_color", "COLOR_GREEN")
+
+    containerData3 = DatabindingAddDataContainerFromPath("", "posse_general_data")
+
+    AddTextEntry("subheader_raw_label_OVERRIDE", "Label")
+    DatabindingAddDataString(containerData3, "subheader_raw_label", "subheader_raw_label_OVERRIDE")
+    DatabindingAddDataBool(containerData3, "subheader_nav_visible", true)
 
 
     menuList = DatabindingAddUiItemList(containerData, "itemsList")
@@ -69,9 +76,11 @@ RegisterCommand("removelegendarybountytextitemmenu", function(source, args)
         DatabindingRemoveDataEntry(menuList)
         DatabindingRemoveDataEntry(containerData)
         DatabindingRemoveDataEntry(containerData2)
+        DatabindingRemoveDataEntry(containerData3)
         menuList = nil
         containerData = nil
         containerData2 = nil
+        containerData3 = nil
     end
     CloseAppByHash(GetHashKey("player_menu"))
 end, false)

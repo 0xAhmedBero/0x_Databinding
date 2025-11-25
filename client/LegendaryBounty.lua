@@ -3,6 +3,7 @@
 
 local containerData = nil
 local containerData2 = nil
+local containerData3 = nil
 local menuList = nil
 function OpenLegendaryBountyMenu()
 
@@ -24,7 +25,14 @@ function OpenLegendaryBountyMenu()
     DatabindingAddDataString(containerData2, "footer_tooltip_text", "tip")
     DatabindingAddDataString(containerData2, "footer_tooltip_color", "COLOR_GREEN")
 
+    
+    containerData3 = DatabindingAddDataContainerFromPath("", "posse_general_data")
 
+    AddTextEntry("subheader_raw_label_OVERRIDE", "Label")
+    DatabindingAddDataString(containerData3, "posse_subheader_label", "subheader_raw_label_OVERRIDE")
+    DatabindingAddDataBool(containerData3, "posse_subheader_nav_visible", true)
+
+ 
     menuList = DatabindingAddUiItemList(containerData, "itemsList")
 
     local itemCounter = 1
@@ -35,8 +43,8 @@ function OpenLegendaryBountyMenu()
         AddTextEntry("itemName_OVERRIDE", "name")
         DatabindingAddDataString(Item, "dynamic_list_item_prompt_text", "itemName_OVERRIDE")
 
-        DatabindingAddDataString(Item, "dynamic_list_item_main_img_texture_dic", "satchel_textures")
-        DatabindingAddDataString(Item, "dynamic_list_item_main_img_texture", "animal_bear")
+        DatabindingAddDataString(Item, "dynamic_list_item_main_img_texture_dic", "multiwheel_emotes")
+        DatabindingAddDataString(Item, "dynamic_list_item_main_img_texture", "emote_action_biting_gold_coin_1")
         DatabindingAddDataString(Item, "dynamic_list_item_tertiary_color", "COLOR_YELLOW")
 
         
@@ -74,9 +82,11 @@ RegisterCommand("removelegendarybountymenu", function(source, args)
         DatabindingRemoveDataEntry(menuList)
         DatabindingRemoveDataEntry(containerData)
         DatabindingRemoveDataEntry(containerData2)
+        DatabindingRemoveDataEntry(containerData3)
         menuList = nil
         containerData = nil
         containerData2 = nil
+        containerData3 = nil
     end
     CloseAppByHash(GetHashKey("player_menu"))
 end, false)
