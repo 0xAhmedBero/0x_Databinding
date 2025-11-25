@@ -27,8 +27,8 @@ function OpenLegendaryBountyPlayerEntryMenu()
     containerData3 = DatabindingAddDataContainerFromPath("", "posse_general_data")
 
     AddTextEntry("subheader_raw_label_OVERRIDE", "Label")
-    DatabindingAddDataString(containerData3, "subheader_raw_label", "subheader_raw_label_OVERRIDE")
-    DatabindingAddDataBool(containerData3, "subheader_nav_visible", true)
+    DatabindingAddDataString(containerData3, "posse_subheader_label", "subheader_raw_label_OVERRIDE")
+    DatabindingAddDataBool(containerData3, "posse_subheader_nav_visible", true)
 
     menuList = DatabindingAddUiItemList(containerData, "itemsList")
 
