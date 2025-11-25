@@ -1,0 +1,75 @@
+
+
+
+local containerData = nil
+local containerData2 = nil
+local menuList = nil
+function OpenLegendaryBountyDualTextItemNonSelectableMenu()
+
+    -- LaunchAppByHash(GetHashKey("player_menu"))
+    LaunchUiappByHashWithEntry(GetHashKey("player_menu"), GetHashKey("mp_legendary_bounty_replay_menu"))
+
+    containerData = DatabindingAddDataContainerFromPath("", "BountyHunterReplayMenu")
+
+    DatabindingAddDataInt(containerData, "setDifficulty", 1)
+
+    DatabindingAddDataString(containerData2, "descriptionText", "descriptionText")
+
+
+
+
+    containerData2 = DatabindingAddDataContainerFromPath("", "player_menu_data")
+
+    DatabindingAddDataString(containerData2, "header_text", "Header")
+    DatabindingAddDataString(containerData2, "footer_tooltip_text", "tip")
+    DatabindingAddDataString(containerData2, "footer_tooltip_color", "COLOR_GREEN")
+
+
+
+
+    menuList = DatabindingAddUiItemList(containerData, "itemsList")
+
+    local itemCounter = 1
+    for i = 1, 12 do
+        local Item = DatabindingAddDataContainer(containerData, "item" .. "_".. itemCounter)
+
+
+        DatabindingAddDataString(Item, "dynamic_list_item_text_label_entry", "label entry")
+        DatabindingAddDataString(Item, "dynamic_list_item_raw_text_entry", "text entry")
+        DatabindingAddDataString(Item, "dynamic_list_item_main_color", "COLOR_YELLOW")
+        DatabindingAddDataBool(Item, "dynamic_list_item_enabled", true)
+
+        DatabindingAddDataString(Item, "dynamic_list_item_secondary_text_label_entry", "label entry2")
+        DatabindingAddDataString(Item, "dynamic_list_item_secondary_raw_text_entry", "text entry2")
+        DatabindingAddDataString(Item, "dynamic_list_item_secondary_color", "COLOR_YELLOW")
+        DatabindingAddDataBool(Item, "dynamic_list_item_secondary_text_visible", true)
+
+        
+        DatabindingAddDataBool(Item, "dynamic_list_item_enabled", true)
+        DatabindingAddDataBool(Item, "dynamic_list_item_visible", true)
+
+        DatabindingInsertUiItemToListFromContextStringAlias(menuList, -1, "pm_dynamic_dual_text_item_non_selectable", Item)
+        itemCounter = itemCounter + 1
+    end
+end
+
+
+
+RegisterCommand("dualtextitemnonselectablemenu", function ()
+    OpenLegendaryBountyDualTextItemNonSelectableMenu()
+end, false)
+
+
+RegisterCommand("removedualtextitemnonselectablemenu", function(source, args)
+    if containerData and DatabindingIsEntryValid(containerData) then
+        DatabindingRemoveDataEntry(menuList)
+        DatabindingRemoveDataEntry(containerData)
+        DatabindingRemoveDataEntry(containerData2)
+        menuList = nil
+        containerData = nil
+        containerData2 = nil
+    end
+    CloseAppByHash(GetHashKey("player_menu"))
+end, false)
+
+

@@ -18,6 +18,16 @@ client_scripts {
     'client/CircleMeter.lua',
     'client/Crafting.lua',
     'client/AbilityCards.lua',
+    'client/Satchel.lua',
+    'client/MissionMenu.lua',
+    'client/LegendaryBounty.lua',
     'client/Test.lua',
+
+
+    -- dynamic_list_item
+    'client/dynamic_list_item/LegendaryBounty_dynamic_text_item.lua',
+    'client/dynamic_list_item/LegendaryBounty_dynamic_player_entry_and_text.lua',
+    'client/dynamic_list_item/LegendaryBounty_dynamic_dual_text_item_non_selectable.lua',
+    'client/dynamic_list_item/LegendaryBounty_dynamic_main_image_and_text_and_end_image_and_text.lua',
 
 }
