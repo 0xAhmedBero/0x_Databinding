@@ -20,6 +20,8 @@ client_scripts {
     'client/Satchel.lua',
     'client/MissionMenu.lua',
     'client/LegendaryBounty.lua',
+    'client/EmoteRadialMenu.lua',
+    'client/DeathScreen.lua',
     'client/Test.lua',
 
 

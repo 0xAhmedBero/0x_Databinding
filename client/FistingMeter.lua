@@ -41,22 +41,3 @@ RegisterCommand("fistingMeter", function()
 
     UiStateMachineDestroy(1546991729) 
 end, false)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
